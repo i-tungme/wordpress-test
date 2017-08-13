@@ -1,0 +1,13 @@
+---
+# tasks file for mysql
+- name: Crate mysql db
+  sudo: yes
+  mysql_db: name={{wp_mysql_db}} state=present
+
+- name: Crate mysql user
+  sudo: yes
+  mysql_user:
+    name={{wp_mysql_user}}
+    password={{wp_mysql_password}}
+    priv=*.*:ALL
+

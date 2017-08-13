@@ -1,0 +1,8 @@
+---
+ - hosts: wordpress-sv
+
+ - name: Install GIT
+   apt: name={{item}} state=present
+   become: yes
+   with_items:
+    - git

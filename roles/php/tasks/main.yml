@@ -1,0 +1,9 @@
+---
+# tasks file for php
+- name: Install php extenion
+  apt: name={{item}} state=present
+  become: yes
+  with_items:
+    - php-gd
+    - php-ssh2
+    - libssh2-1
